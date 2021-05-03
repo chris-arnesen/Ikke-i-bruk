@@ -5,6 +5,10 @@
  */
 package tjener;
 
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -13,13 +17,36 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import java.sql.*;
 
 
 public class Tjener extends Application {
     
+    //Socket
+    int port = 8000;
+    ObjectOutputStream out;
+    ObjectInputStream in;
+    ServerSocket server;
+    Socket socket;
+    
+    
+    private Connection connectDB() {
+        String url = "jdbc:sqlite:C:\\Users\\Mats Engesund\\Documents\\NetBeansProjects\\OBJ2100\\eksamen.db";
+        Connection con = null; 
+        try {
+            con = DriverManager.getConnection(url); 
+            System.out.println("Tilkobling til DB er etablert");
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return con;
+    }
+    
+    
     @Override
     public void start(Stage primaryStage) {
-    
+        Tjener app = new Tjener(); 
+        app.connectDB();
         
         BorderPane bpane = new BorderPane();
         //root.getChildren().add(btn);
