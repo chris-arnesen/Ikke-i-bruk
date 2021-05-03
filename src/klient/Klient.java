@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eksamen.obj2100;
+package klient;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -13,11 +13,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-/**
- *
- * @author christofferstrandarnesen
- */
-public class EksamenOBJ2100 extends Application {
+
+public class Klient extends Application {
     
     @Override
     public void start(Stage primaryStage) {
@@ -34,9 +31,9 @@ public class EksamenOBJ2100 extends Application {
         StackPane root = new StackPane();
         root.getChildren().add(btn);
         
-        Scene scene = new Scene(root, 300, 250);
+        Scene scene = new Scene(root, 600, 500);
         
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("Klient");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

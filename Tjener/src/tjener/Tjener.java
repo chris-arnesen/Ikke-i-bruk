@@ -13,10 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-/**
- *
- * @author christofferstrandarnesen
- */
+
 public class Tjener extends Application {
     
     @Override
@@ -34,9 +31,9 @@ public class Tjener extends Application {
         StackPane root = new StackPane();
         root.getChildren().add(btn);
         
-        Scene scene = new Scene(root, 300, 250);
+        Scene scene = new Scene(root, 600, 500);
         
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("Tjener");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
