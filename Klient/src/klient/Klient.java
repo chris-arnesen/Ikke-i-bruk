@@ -5,6 +5,9 @@
  */
 package klient;
 
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -20,6 +23,14 @@ import javafx.stage.Stage;
 
 
 public class Klient extends Application {
+    
+    //Socket
+    int port = 8000;
+    String host ="localhost";
+    ObjectOutputStream out;
+    ObjectInputStream in;
+    Socket socket;
+    
     BorderPane bpane;
     Pane top = new Pane();
     Pane center = new Pane();

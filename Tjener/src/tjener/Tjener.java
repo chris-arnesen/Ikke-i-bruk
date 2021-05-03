@@ -5,6 +5,10 @@
  */
 package tjener;
 
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -30,6 +34,12 @@ public class Tjener extends Application {
         return con;
     }
     
+    //Socket
+    int port = 8000;
+    ObjectOutputStream out;
+    ObjectInputStream in;
+    ServerSocket server;
+    Socket socket;
     
     @Override
     public void start(Stage primaryStage) {
