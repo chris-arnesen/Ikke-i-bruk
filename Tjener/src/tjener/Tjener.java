@@ -22,6 +22,7 @@ import java.sql.*;
 
 public class Tjener extends Application {
     
+    private static String url = "jdbc:sqlite:eksamen.db"; 
     //Socket
     int port = 8000;
     ObjectOutputStream out;
@@ -31,7 +32,7 @@ public class Tjener extends Application {
     
     
     private Connection connectDB() {
-        String url = "jdbc:sqlite:C:\\Users\\Mats Engesund\\Documents\\NetBeansProjects\\OBJ2100\\eksamen.db";
+        //String url = "jdbc:sqlite:C:\\Users\\Mats Engesund\\Documents\\NetBeansProjects\\OBJ2100\\eksamen.db";
         Connection con = null; 
         try {
             con = DriverManager.getConnection(url); 
