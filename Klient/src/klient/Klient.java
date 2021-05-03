@@ -65,6 +65,10 @@ public class Klient extends Application {
         txt.setLayoutX(150);
         txt.setLayoutY(140);
         center.getChildren().add(btn);
+        btn.setOnAction((event) -> {
+            bpane.getChildren().remove(center); 
+            bpane.setCenter(getChatroomPane());
+        });
         btn.setLayoutX(350);
         btn.setLayoutY(140);
         
@@ -82,6 +86,19 @@ public class Klient extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+    }
+    
+    
+    public Pane getChatroomPane() {
+        Pane chatroomPane = new Pane(); 
+        chatroomPane.setPrefHeight(300);
+        chatroomPane.setStyle("-fx-border-color: black; -fx-background-color: white;");
+        
+        Button chatroom1 = new Button("Chatroom1"); 
+        chatroom1.setStyle("-fx-background-color: white; -fx-border: 2px solid blac;");
+        chatroomPane.getChildren().add(top);
+        
+        return chatroomPane; 
     }
     
 }

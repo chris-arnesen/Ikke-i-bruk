@@ -22,6 +22,14 @@ import java.sql.*;
 
 public class Tjener extends Application {
     
+    //Socket
+    int port = 8000;
+    ObjectOutputStream out;
+    ObjectInputStream in;
+    ServerSocket server;
+    Socket socket;
+    
+    
     private Connection connectDB() {
         String url = "jdbc:sqlite:C:\\Users\\Mats Engesund\\Documents\\NetBeansProjects\\OBJ2100\\eksamen.db";
         Connection con = null; 
@@ -34,12 +42,6 @@ public class Tjener extends Application {
         return con;
     }
     
-    //Socket
-    int port = 8000;
-    ObjectOutputStream out;
-    ObjectInputStream in;
-    ServerSocket server;
-    Socket socket;
     
     @Override
     public void start(Stage primaryStage) {
