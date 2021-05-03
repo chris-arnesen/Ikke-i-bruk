@@ -10,28 +10,56 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 
 public class Klient extends Application {
+    BorderPane bpane;
+    Pane top = new Pane();
+    Pane center = new Pane();
+    Pane bottom = new Pane();
+    Label topLabel = new Label("Tast inn brukernavn: ");
+    TextField txt = new TextField();
+    Button btn = new Button("Log inn");
+    
+    
     
     @Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
+    
+        bpane = new BorderPane();
+        bpane.setTop(top);
+        bpane.setCenter(center);
+        bpane.setBottom(bottom);
         
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
+        top.setPrefHeight(100);
+        top.setStyle("-fx-border-color: black; -fx-background-color: grey;");
+        center.setPrefHeight(300);
+        center.setStyle("-fx-border-color: black; -fx-background-color: white;");
+        bottom.setPrefHeight(100);
+        bottom.setStyle("-fx-border-color: black; -fx-background-color: grey;");
+        topLabel.setStyle("-fx-text-fill:BLACK; -fx-font-size: 30;");
         
-        Scene scene = new Scene(root, 600, 500);
+        top.getChildren().add(topLabel);
+        topLabel.setLayoutX(25);
+        topLabel.setLayoutY(25);
+        
+        center.getChildren().add(txt);
+        txt.setLayoutX(150);
+        txt.setLayoutY(140);
+        center.getChildren().add(btn);
+        btn.setLayoutX(350);
+        btn.setLayoutY(140);
+        
+       
+        
+        Scene scene = new Scene(bpane, 600, 500);
         
         primaryStage.setTitle("Klient");
         primaryStage.setScene(scene);
